@@ -23,7 +23,7 @@ load_dotenv(BASE_DIR / '.env')
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-6hlnzl!x=1g!)3(4%gdjdv%98igca4et55*^!j&5@mq1(_fo_r'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -84,7 +84,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'mailing_database',
         'USER': 'postgres',
-        'PASSWORD': '050822'
+        'PASSWORD': os.getenv('PASSWORD')
     }
 }
 
